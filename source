@@ -1,0 +1,124 @@
+"Savior" by Abdi
+
+A person has a number called current hit points. A person can be dead or alive. Persons are usually alive.
+
+The current hit points of the player is 35.
+
+Instead of attacking someone: 
+	let the damage be 3;
+	if the player is carrying a wooden bow:
+		if the player is carrying a quiver full of arrows:
+			let the damage be a random number between 10 and 20;
+			say "You shoot your arrow at [the noun], causing [damage] poitns of damage!";
+	if the player is not carrying a wooden bow:
+		if the player is not carrying a quiver full of arrows:
+			say "You attack [the noun], causing [damage] points of damage!"; 
+	decrease the current hit points of the noun by the damage; 
+	say "[line break][the noun] now has [current hit points of the noun] hit points!";
+	if the current hit points of the noun is less than 0: 
+		say "[line break][The noun]  has fallen and dissapears."; 
+		now the noun is nowhere;
+		if the noun is the Guard:
+			say "You picked up the North key from the guard's corpse.";
+			now the player is carrying the North key;
+	let the enemy damage be a random number between 2 and 10; 
+	say "[line break][The noun] attacks you, causing [enemy damage] points of damage!";
+	decrease the current hit points of the player by the enemy damage;  
+	say "[line break]You now have [current hit points of the player] hit points!";
+	if the current hit points of the player is less than 0: 
+		say "[line break]You expire!"; 
+		end the story. 
+
+
+Log Cabin is a room. "This cozy little log cabin is where you have spent your life as long you can
+remember. Your fond memories of winters by the fire and summers spent fishing
+bring a warm glow to your heart. Make sure to take the food. It helps in battle."
+
+A loaf of bread is in the Log Cabin. "To your left is a freshly baked loaf of bread."
+A bean burrito is in the Log Cabin.
+
+A food is a kind of thing that is edible. Food has some text called flavor. The flavor of food is usually "yummy."
+
+After eating something:
+	now the current hit points of the player is 35;
+	say "[line break] Your hit points have been replenished.";
+	if the noun provides the property flavor, say "[the flavor of the noun][paragraph break]";
+	otherwise say "It's [noun]-flavored."
+	
+The loaf of bread is food. The flavor of the loaf of bread is "starchy."
+The bean burrito is food. The flavor of the bean burrito is "spicey."
+A jelly bean is in the Log Cabin. "Some interesting looking jellybean is on the kitchen table."
+The jelly bean is food.
+
+Mail is a scene.
+
+Mail begins when the player is in the Log Cabin for the second turn. 
+
+When Mail begins: 
+	say "You hear a sudden noise from the east in your front lawn."
+
+Front Lawn is east of Log Cabin. "You see a small front lawn slightly illuminated by the setting sun, the armory to the north, and your destroyed mail box on the ground. In the east, you see frightenly tall grass and the King's Castle further in the distance."
+
+A note is in the Front Lawn. "Among the rubble you see a slightly crumpled note."
+The description of the note is "Dear Heroine: We have taken your parents for no reason. Don't think of trying to rescue them. Try to go through the Tall Grass and your parents will lose their only daughter.  With love and kisses, Not-so-Evil King."
+
+The Armory is north of the Front Lawn. "The doors of the armory barely hang by their hinges. The interior is in ruins and all the weapons look missing."
+
+A display case is fixed in place in The Armory. display case is a container. "Nothing is left inside but a mounted display case of a bow and arrow seemingly untouched."
+
+Inside the display case is a wooden bow.
+Inside the display case is a quiver full of arrows.
+
+A plaque is fixed in place in The Armory. "Below the case is plaque." The description of the plaque is "Take this, it's dangerous to go alone."
+
+Tall Grass is east of Front Lawn. "You are surrounded by tall mustard green grass, unable to see whats ahead. Your arms are tiring as they frantically swipe grass out the way. Who knows what lurks around..."
+
+The Hungry King's Knight is a man in the Tall Grass. "You see the Hungry King's knight approach you."
+ The current hit points of the King's Knight is 500.
+ 
+The block giving rule is not listed in the check giving it to rules.
+ 
+ After giving food to The Hungry King's Knight:
+	say "The Hungry Knight thanks you for your generosity. You are rewarded with the East Key";
+	now The Hungry King's Knight is nowhere;
+	now the player is carrying the East Key.
+
+East Tower Gate is a door. East Tower Gate is east of Tall Grass and west of E-Tower.
+East Tower Gate is lockable and locked. The matching key is East key.
+
+E-Tower is a room. "After climbing several flights of stairs you reach the top of the south tower."
+The Guard is a man in the E-Tower. "An armored guard stands before you, determined to protect the North Key. You notice no weaknesses in this guard."
+
+After giving food to The Guard:
+	say "Ha you just wasted one of your last pieces of food. The same trick doesn't work twice."
+	
+The current hit points of The Guard is 75.
+
+
+North Tower Gate is a door. North Tower Gate is north of E-Tower and south of N-Tower.
+North Tower Gate is lockable and locked. The matching key is North key.
+
+N-Tower is a room. "After crossing the tower bridge you reach the N-Tower."
+The Captain is a man in the N-Tower. "The Captain of the King's Guard stands before you. 'Your journey ends here.' he coldy exclaims. The Captain is dressed in heavy armor. You notice his left knee is inexplicably unguarded though."
+
+The current hit points of the Captain is 500.
+
+The unguarded knee is a person in the N-Tower.
+
+Instead of attacking unguarded knee:
+	say "The arrow flys and pierces the Captain's knee at high speeds. The Captain belows in pain: 'My knee! That's my f****ing knee!'";
+	say "[line break] You conscience gets the best of you and you meekly reply '...uh sorry, didnt know it hurt that much..'";
+	say "[line break] With his last breath the captain whispers 'You were all like 'I gotta do an attack'.....but you could've just walked away. But you didn't, you prick'";
+	now the Captain is nowhere;
+	now the unguarded knee is nowhere;
+	say "[line break] [line break] You are rewarded with the Castle key.";
+	now the player is carrying the Castle key;
+
+Castle Hall is a room. "After going down several flights of stairs you reach the grand halls of the Castle. You have a clear view of the Kings Throne -- its empty. There is a note on the chair."
+
+A paper is in the Castle Hall. The description of paper is "Sorry young heroine. Your parents are in another castle....."
+
+After examining paper:
+	end the story.
+	
+Castle Gate is a door. Castle Gate is west of N-Tower and east of Castle Hall. Castle Gate is lockable and locked. The matching key is Castle key.
